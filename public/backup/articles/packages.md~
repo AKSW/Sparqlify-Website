@@ -1,0 +1,7 @@
+## Debian packages
+
+Sparqlify Debian packages can be obtained by following means:
+* Via the [Linked Data Stack](http://stack.linkeddata.org) (recommended)
+* Download from the [Sparqlify website's download section](http://sparqlify.org/downloads/releases).
+* Directly from source using maven (read down the README)
+

@@ -1,0 +1,18 @@
+<!-- Main -->
+<div class="wrapper style1">
+
+	<div class="container">
+		<div class="row">
+			<div class="8u skel-cell-mainContent" id="content">
+				<%- yield %>
+			</div>
+			<div class="4u" id="sidebar">
+				<%- partial("_shared/sidebar") %>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+		</div>
+	</div>
+
+</div>

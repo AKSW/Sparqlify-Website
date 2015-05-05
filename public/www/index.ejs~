@@ -1,0 +1,97 @@
+
+<!-- Banner -->
+<div id="banner">
+	<span class="byline">
+		<b>SPARQLify</b> is a scalable SPARQL-SQL rewriter whose development began in April 2011 in the course of the <a href="http://linkedgeodata.org/About">LinkedGeoData project</a>.
+	</span>
+</div>
+
+<!-- Carousel -->
+
+<div class="carousel">
+	<div class="reel">
+
+		<article>
+			<%- partial("features/feature_sml") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_r2rmlSupport") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_scalability") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_rewriting") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_spatialSupport") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_sparqlSupport") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_pphSupport") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_csvSupport") %>
+		</article>
+
+		<article>
+			<%- partial("features/feature_cliTools") %>
+		</article>
+
+		<!--
+	
+		<article>
+			<a href="http://mdomaradzki.deviantart.com/art/Vine-Country-381350120" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+			<header>
+				<h3><a href="#">Varius magnis sollicitudin</a></h3>
+			</header>
+			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
+		</article>
+	-->
+	</div>
+</div>
+
+
+<!-- Main -->
+<!--
+<div class="wrapper style2">
+	<article id="main" class="container special">
+		<footer>
+			<a href="#" class="button">Continue Reading</a>
+		</footer>
+	</article>
+</div>
+-->
+
+<!-- Features -->
+
+<div class="wrapper style1">
+	<section id="features" class="container special">
+		<div class="row">
+			<div class="8u skel-cell-mainContent" id="content">
+			<header>
+				<p>SPARQLify supports the following SPARQL language features:
+			</header>
+				<ul>
+					<li>Join, LeftJoin (i.e. Optional), Union, Sub queries</li>
+					<li>Filter predicates: comparison: (&lt;=, &lt;, =, &gt;, &gt;=) logical: (!, &&; ||) arithmetic: (+, -) spatial: st_intersects, geomFromText; other: regex, lang, langMatches</li>
+					<li>Aggregate functions: Count(*)</li>
+					<li>Order By is pushed into the SQL</li>
+				</ul>
+			</div>
+			<div class="4u" id="sidebar">
+				<%- partial("_shared/dlbox") %>
+			</div>
+		</div>
+	</section>
+</div>
+

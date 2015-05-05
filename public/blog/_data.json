@@ -1,0 +1,10 @@
+{
+  "my-first-post": {
+    "title": "My post title",
+    "date": "2013-01-01"
+  },
+  "my-second-post": {
+    "title": "My second post",
+    "date": "2013-02-02"
+  }
+}

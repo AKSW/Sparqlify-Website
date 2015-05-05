@@ -1,0 +1,16 @@
+<div>
+	<%
+	var foo = 'blubb';
+	function switchFoo(){
+		console.log('in switchFoo');
+		if(foo == 'blubb') foo = 'bla';
+		else foo = 'blubb';
+	}
+	if(foo == 'blubb') {	
+	%>
+	<button onclick="switchFoo()">Release</button>
+	<% } else { %>
+	<button>Stable</button>
+	<% } %>
+	<%= foo %>
+</div>

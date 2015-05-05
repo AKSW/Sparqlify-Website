@@ -1,0 +1,9 @@
+## Tool suite
+
+If Sparqlify was installed from the debian package, the following commands are available system-wide:
+
+* `sparqlify`: This is the main executable for running individual SPARQL queries, creating dumps and starting a stand-alone server.
+* `sparqlify-csv`: This tool can create RDF dumps from CSV file based on SML view definitions.
+* `sparqlify-platform`: A stand-alone server component integrating additional projects.
+
+These tools write their output (such as RDF data in the N-TRIPLES format) to STDOUT. Log output goes to STDERR.

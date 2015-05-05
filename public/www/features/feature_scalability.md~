@@ -1,0 +1,9 @@
+	<article>
+			<!--			
+			<img src="images/pic01.jpg" alt="" />
+			-->
+			<header>
+				<h3>Scalability</h3>
+			</header>
+			<p>Sparqlify does not evaluate expressions in memory. All SPARQL filters end up in the corresponding SQL statement, giving the underlying RDBMS has maximum control over query planning.</p>							
+		</article>

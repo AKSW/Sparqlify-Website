@@ -1,0 +1,19 @@
+## Sparqlify features
+
+Sparqlify is a scalable SPARQL-SQL rewriter whose development began in April 2011 in the course of the [LinkedGeoData](http://linkedgeodata.org) project.
+
+This system's features/traits are:
+* Support of the ['Sparqlification Mapping Language' (SML)](http://sparqlify.org/wiki/SML), an intuitive language for expressing RDB-RDF mappings with only very little syntactic noise.
+* Scalability: Sparqlify does not evaluate expressions in memory. All SPARQL filters end up in the corresponding SQL statement, giving the underlying RDBMS has maximum control over query planning.
+* A powerful rewriting engine that analyzes filter expressions in order to eleminate self joins and joins with unsatisfiable conditions.
+* Initial support for spatial datatypes and predicates.
+* A subset of the SPARQL 1.0 query language plus sub queries are supported.
+* Tested with PostgreSQL/Postgis and H2. Support for further databases is planned.
+* CSV support
+* R2RML will be supported soon
+
+## Supported SPARQL language features
+* Join, LeftJoin (i.e. Optional), Union, Sub queries
+* Filter predicates: comparison: (<=, <, =, >, >=) logical: (!, &&; ||) arithmetic: (+, -) spatial: st\_intersects, geomFromText; other: regex, lang, langMatches  
+* Aggregate functions: Count(\*)
+* Order By is pushed into the SQL

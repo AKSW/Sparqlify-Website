@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>
+<!--
+	Helios 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SPARQLify</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+
+		
+	<body class="sparqlify-platform" >
+
+		<!-- Header -->
+		
+<div id="header">
+			
+	<!-- Inner -->
+		
+
+	<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><span>About</span>
+					<ul>
+						<li><a href="/smlLanguage">SML Mapping Language</a>
+							<ul>
+								<li><a href="/r2rml">R2RML conversion</a></li>
+								<li><a href="/userStudyResults">User Study Results</a></li>
+							</ul>
+						</li>
+						<li><a href="/tools">Tools suite</a>
+							<ul>
+								<li><a href="/sparqlify">Sparqlify</a></li>
+								<li><a href="/sparqlify-csv">Sparqlify CSV</a></li>
+								<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
+							</ul>
+						</li>
+						<li><a href="/screenshots">Screenshots</a></li>
+						<li><a href="/cmdTooling">Command Line Tooling</a></li>
+					</ul>
+				</li>
+				<li><span>Docs</span>
+					<ul>
+						<li><a href="/content/manual.pdf">Manual</a></li>
+						<li><span>Getting Started</span>
+							<ul>
+								<li><a href="/packages">Packages</a></li>
+								<li><a href="/building">Building</a></li>
+							</ul>
+						</li>
+						<li><a href="http://stack.linkeddata.org/download-and-install/">Download</a></li>
+						<li><span>Examples</span>
+							<ul>
+								<li><a href="/example1">Example 1</a></li>
+								<li><a href="/example2">Example 2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><span>Development</span>
+					<ul>
+						<li><a href="/architecture">Architecture</a></li>
+						<li><a href="/changeLog">Change log</a></li>	
+						<li><a href="/roadMap">Roadmap</a></li>
+						<li><a href="/demoArea">Demo Area</a></li>
+					</ul>
+				</li>
+				<li><span>Community</span>
+					<ul>
+						<li><a href="http://github.com/sparqlify">Github</a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li><a href="/publications">Publications</a></li>
+						<li><a href="/relatedWork">Related work</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+</div>
+
+
+		
+			<div class="wrapper style1 background">
+				<div class="container">
+					<div class="row">
+						<div class="8u skel-cell-mainContent" id="content">
+							<h3>sparqlify-platform (Deprecated; about to be superseded by sparqlify-web-admin)</h3><p>The Sparqlify Platform (under /sparqlify-platform) bundles Sparqlify with the Linked Data wrapper <a href="https://github.com/cygri/pubby">Pubby</a> and the SPARQL Web interface <a href="https://github.com/kurtjx/SNORQL">Snorql</a>.</p>
+<p>Usage: <code>sparqlify-platform config-dir [port]</code> </p>
+<ul>
+<li><code>config-dir</code> Path to the configuration directory, e.g. <code>&lt;repository-root/sparqlify-platform/config/example&gt;</code></li>
+<li><code>port</code> Port on which to run the platform, default 7531.</li>
+</ul>
+<p>For building, at the root of the project (outside of the sparqlify-* directories), run <code>mvn compile</code> to build all modules.
+Afterwards, lauch the platform using:</p>
+<pre><code>cd sparqlify-platform/bin
+./sparqlify-platform &lt;path-to-config&gt; &lt;port&gt;
+</code></pre><p>Assuming the platform runs under <code>http://localhost:7531</code>, you can access the following services relative to this base url:</p>
+<ul>
+<li><code>/sparql</code> is Sparqlify&#39;s SPARQL endpoint</li>
+<li><code>/snorql</code> shows the SNORQL web frontend</li>
+<li><code>/pubby</code> is the entry point to the Linked Data interface</li>
+</ul>
+<h4>Configuration</h4><p>The configDirectory argument is mandatory and must contain a <em>sub-directory</em> for the context-path (i.e. <code>sparqlify-platform</code>) in turn contains the files:</p>
+<ul>
+<li><code>platform.properties</code> This file contains configuration parameters that can be adjusted, such as the database connection.</li>
+<li><code>views.sparqlify</code> The set of Sparqlify view definition to use.</li>
+</ul>
+<p>I recommend to first create a copy of the files in <code>/sparqlify-platform/config/example</code> under a different location, then adjust the parameters and finally launch the platform with <code>-DconfigDirectory=...</code> set appropriately.</p>
+<p>The platform <em>applies autoconfiguration to Pubby and Snorql</em>:</p>
+<ul>
+<li>Snorql: Namespaces are those of the views.sparqlify file.</li>
+<li>Pubby: The host name of all resources generated in the Sparqlify views is replaced with the URL of the platform (currently still needs to be configured via <code>platform.properties</code>)</li>
+</ul>
+<p>Additionally you probably want to make the URIs nice by e.g. configuring an apache reverse proxy:</p>
+<p>Enable the apache <code>proxy_http</code> module:</p>
+<pre><code>sudo a2enmod proxy_http
+</code></pre><p>Then in your <code>/etc/apache2/sites-available/default</code> add lines such as</p>
+<pre><code>ProxyRequest Off
+ProxyPass /resource http://localhost:7531/pubby/bizer/bsbm/v01/ retry=1
+ProxyPassReverse /resource http://localhost:7531/pubby/bizer/bsbm/v01/
+</code></pre><p>These entries will enable requests to <code>http://localhost/resource/...</code> rather than <code>http//localhost:7531/pubby/bizer/bsbm/v01/</code>.</p>
+<p>The <code>retry=1</code> means, that apache only waits 1 seconds before retrying again when it encounters an error (e.g. HTTP code 500) from the proxied resource.</p>
+<p><em>IMPORTANT: ProxyRequests are off by default; DO NOT ENABLE THEM UNLESS YOU KNOW WHAT YOU ARE DOING. Simply enabling them potentially allows anyone to use your computer as a proxy.</em></p>
+						</div>
+						<div class="4u" id="sidebar">
+							<hr class="first" >
+	<section>
+	<!-- Included from twitter.com -->	
+	<a class="twitter-timeline" href="https://twitter.com/SPARQLify" data-widget-id="592568552844107776">Latest Tweets:</a> 
+	<script>
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script> 
+	<footer>
+		<a href="https://twitter.com/sparqlify" class="icon icon-twitter">Follow us on Twitter</a>
+	</footer>
+</section>
+
+
+</hr>
+<hr class="second" >
+	<section>
+	<header>
+		Search SPARQLify.org
+	</header>
+	<div class="row half no-collapse">
+		<div class="4u">
+			<input type=text />
+	<footer>
+		<a href="/search" class="button">Search</a>
+	</footer>
+</section>
+
+
+</hr>
+<hr class="third" >
+	
+</hr>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		<!-- Footer -->
+		<div id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<!-- Tweets -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-twitter circled"><span>Tweets</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="tweet">
+								Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+								<span class="timestamp">5 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Hendrerit rutrum quisque.
+								<span class="timestamp">30 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+								<span class="timestamp">5 hours ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Posts -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-file circled"><span>Posts</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Nisl fermentum integer</a></h3>
+								</header>
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Phasellus portitor lorem</a></h3>
+								</header>
+								<span class="timestamp">6 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Magna tempus consequat</a></h3>
+								</header>
+								<span class="timestamp">Yesterday</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Feugiat lorem ipsum</a></h3>
+								</header>
+								<span class="timestamp">2 days ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Photos -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-camera circled"><span>Photos</span></h2>
+					</header>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Air-Lounge-385212062" class="image full"><img src="images/pic10.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-City-Streets-II-382623606" class="image full"><img src="images/pic11.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Trainride-Visions-383309985" class="image full"><img src="images/pic12.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-Metro-382623851" class="image full"><img src="images/pic13.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Cliffs-of-Coogee-II-366961860" class="image full"><img src="images/pic14.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Stormy-Coast-VII-366561367" class="image full"><img src="images/pic15.jpg" alt="" /></a>
+						</div>
+					</div>
+				</section>
+
+		</div>
+		<hr />
+		<div class="row">
+			<div class="12u">
+				
+-->				<!-- Contact -->
+					<section class="contact">
+						<header>
+							<h3>Contact us</h3>
+						</header>
+						<ul class="icons">
+							<li><a href="https://twitter.com/sparqlify" class="icon icon-twitter"><span>Twitter</span></a></li>
+<!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+							<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
+							<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
+							<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+							<li><a href="#" class="icon icon-linkedin"><span>Linkedin</span></a></li> -->
+						</ul>
+					</section>
+<br>
+				<!-- Copyright -->
+					<div class="copyright">
+						<ul class="menu">
+							<li>&copy; Sparqlify 2015. All rights reserved.</li>
+						</ul>
+					</div>
+				
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+	</body>
+</html>

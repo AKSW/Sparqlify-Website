@@ -1,0 +1,9 @@
+<article>
+			<!--			
+			<img src="images/pic01.jpg" alt="" />
+			-->
+			<header>
+				<h3>SPARQL support</h3>
+			</header>
+			<p>A subset of the SPARQL 1.0 query language plus sub queries are supported.</p>							
+		</article>

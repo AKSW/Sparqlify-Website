@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<!--
+	Helios 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SPARQLify</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/style-noscript.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+
+		
+	<body class="smlLanguage" >
+
+		<!-- Header -->
+		
+<div id="header">
+			
+	<!-- Inner -->
+		
+
+	<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><span>About</span>
+					<ul>
+						<li><a href="/smlLanguage">SML Mapping Language</a>
+							<ul>
+								<li><a href="/r2rml">R2RML conversion</a></li>
+								<li><a href="/userStudyResults">User Study Results</a></li>
+							</ul>
+						</li>
+						<li><a href="/tools">Tools suite</a>
+							<ul>
+								<li><a href="/sparqlify">Sparqlify</a></li>
+								<li><a href="/sparqlify-csv">Sparqlify CSV</a></li>
+								<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
+							</ul>
+						</li>
+						<li><a href="/screenshots">Screenshots</a></li>
+						<li><a href="/cmdTooling">Command Line Tooling</a></li>
+					</ul>
+				</li>
+				<li><span>Docs</span>
+					<ul>
+						<li><a href="/content/manual.pdf">Manual</a></li>
+						<li><span>Getting Started</span>
+							<ul>
+								<li><a href="/packages">Packages</a></li>
+								<li><a href="/building">Building</a></li>
+							</ul>
+						</li>
+						<li><a href="http://stack.linkeddata.org/download-and-install/">Download</a></li>
+						<li><span>Examples</span>
+							<ul>
+								<li><a href="/example1">Example 1</a></li>
+								<li><a href="/example2">Example 2</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><span>Development</span>
+					<ul>
+						<li><a href="/architecture">Architecture</a></li>
+						<li><a href="/changeLog">Change log</a></li>	
+						<li><a href="/roadMap">Roadmap</a></li>
+						<li><a href="/demoArea">Demo Area</a></li>
+					</ul>
+				</li>
+				<li><span>Community</span>
+					<ul>
+						<li><a href="http://github.com/sparqlify">Github</a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li><a href="/publications">Publications</a></li>
+						<li><a href="/relatedWork">Related work</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+</div>
+
+
+		
+			<div class="wrapper style1 background">
+				<div class="container">
+					<div class="row">
+						<div class="8u skel-cell-mainContent" id="content">
+							<h2>SML Mapping Syntax:</h2><p>A Sparqlification Mapping Language (SML) configuration is essentially a set of CREATE VIEW statements, somewhat similar to the CREATE VIEW statement from SQL.
+Probably the easiest way to learn to syntax is to look at the following resources:</p>
+<ul>
+<li>The <a href="http://sparqlify.org/wiki/SML">SML documentation</a></li>
+<li>The <a href="https://github.com/AKSW/Sparqlify/tree/master/sparqlify-core/src/test/resources/org/aksw/sml/r2rml_tests">SML test suite</a> which is derived from the <a href="https://github.com/AKSW/Sparqlify/tree/master/sparqlify-core/src/test/resources/org/w3c/r2rml_tests">R2RML test suite</a>.</li>
+</ul>
+<p>Two more examples are from</p>
+<p>Additionally, for convenience, prefixes can be declared, which are valid throughout the config file.
+As comments, you can use //, /* */, and #. </p>
+<p>For a first impression, here is a quick example:</p>
+<pre><code>/* This is a comment
+ * /* You can even nest them! */
+ */
+// Prefixes are valid throughout the file
+Prefix dbp:&lt;http://dbpedia.org/ontology/&gt;
+Prefix ex:&lt;http://ex.org/&gt;
+
+Create View myFirstView As
+    Construct {
+        ?s a dbp:Person .
+        ?s ex:workPage ?w .
+    }
+With
+    ?s = uri(&#39;http://mydomain.org/person&#39;, ?id) // Define ?s to be an URI generated from the concatenation of a prefix with mytable&#39;s id-column.
+    ?w = uri(?work_page) // ?w is assigned the URIs in the column &#39;work_page&#39; of &#39;mytable&#39;
+Constrain
+    ?w prefix &quot;http://my-organization.org/user/&quot; // Constraints can be used for optimization, e.g. to prune unsatisfiable join conditions
+From
+    mytable; // If you want to use an SQL query, the query (without trailing semicolon) must be enclosed in double square brackets: [[SELECT id, work_page FROM mytable]]
+</code></pre><h3>Notes for sparqlify-csv</h3><p>For <code>sparqlify-csv</code> view definition syntax is almost the same as above; the differences being:</p>
+<ul>
+<li>Instead of <code>Create View viewname As Construct</code> start your views with <code>CREATE VIEW TEMPLATE viewname As Construct</code></li>
+<li>There is no FROM and CONSTRAINT clause</li>
+</ul>
+<p>Colums can be referenced either by name (see the -h option) or by index (1-based).</p>
+<h4>Example</h4><pre><code>// Assume a CSV file with the following columns (osm stands for OpenStreetMap)
+(city\_name, country\_name, osm\_entity\_type, osm\_id, longitude, latitude)
+
+Prefix fn:&lt;http://aksw.org/sparqlify/&gt; //Needed for urlEncode and urlDecode.
+Prefix rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+Prefix owl:&lt;http://www.w3.org/2002/07/owl#&gt;
+Prefix xsd:&lt;http://www.w3.org/2001/XMLSchema#&gt;
+Prefix geo:&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;
+
+Create View Template geocode As
+  Construct {
+    ?cityUri
+      owl:sameAs ?lgdUri .
+
+    ?lgdUri
+      rdfs:label ?cityLabel ;
+      geo:long ?long ;
+      geo:lat ?lat .
+  }
+  With
+    ?cityUri = uri(concat(&quot;http://fp7-pp.publicdata.eu/resource/city/&quot;, fn:urlEncode(?2), &quot;-&quot;, fn:urlEncode(?1)))
+    ?cityLabel = plainLiteral(?1)
+    ?lgdUri = uri(concat(&quot;http://linkedgeodata.org/triplify/&quot;, ?4, ?5))
+    ?long = typedLiteral(?6, xsd:float)
+    ?lat = typedLiteral(?7, xsd:float)
+</code></pre>
+						</div>
+						<div class="4u" id="sidebar">
+							<hr class="first" >
+	<section>
+	<!-- Included from twitter.com -->	
+	<a class="twitter-timeline" href="https://twitter.com/SPARQLify" data-widget-id="592568552844107776">Latest Tweets:</a> 
+	<script>
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script> 
+	<footer>
+		<a href="https://twitter.com/sparqlify" class="icon icon-twitter">Follow us on Twitter</a>
+	</footer>
+</section>
+
+
+</hr>
+<hr class="second" >
+	<section>
+	<header>
+		Search SPARQLify.org
+	</header>
+	<div class="row half no-collapse">
+		<div class="4u">
+			<input type=text />
+	<footer>
+		<a href="/search" class="button">Search</a>
+	</footer>
+</section>
+
+
+</hr>
+<hr class="third" >
+	
+</hr>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		<!-- Footer -->
+		<div id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<!-- Tweets -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-twitter circled"><span>Tweets</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="tweet">
+								Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+								<span class="timestamp">5 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Hendrerit rutrum quisque.
+								<span class="timestamp">30 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+								<span class="timestamp">5 hours ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Posts -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-file circled"><span>Posts</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Nisl fermentum integer</a></h3>
+								</header>
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Phasellus portitor lorem</a></h3>
+								</header>
+								<span class="timestamp">6 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Magna tempus consequat</a></h3>
+								</header>
+								<span class="timestamp">Yesterday</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Feugiat lorem ipsum</a></h3>
+								</header>
+								<span class="timestamp">2 days ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Photos -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-camera circled"><span>Photos</span></h2>
+					</header>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Air-Lounge-385212062" class="image full"><img src="images/pic10.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-City-Streets-II-382623606" class="image full"><img src="images/pic11.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Trainride-Visions-383309985" class="image full"><img src="images/pic12.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-Metro-382623851" class="image full"><img src="images/pic13.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Cliffs-of-Coogee-II-366961860" class="image full"><img src="images/pic14.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Stormy-Coast-VII-366561367" class="image full"><img src="images/pic15.jpg" alt="" /></a>
+						</div>
+					</div>
+				</section>
+
+		</div>
+		<hr />
+		<div class="row">
+			<div class="12u">
+				
+-->				<!-- Contact -->
+					<section class="contact">
+						<header>
+							<h3>Contact us</h3>
+						</header>
+						<ul class="icons">
+							<li><a href="https://twitter.com/sparqlify" class="icon icon-twitter"><span>Twitter</span></a></li>
+<!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+							<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
+							<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
+							<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+							<li><a href="#" class="icon icon-linkedin"><span>Linkedin</span></a></li> -->
+						</ul>
+					</section>
+<br>
+				<!-- Copyright -->
+					<div class="copyright">
+						<ul class="menu">
+							<li>&copy; Sparqlify 2015. All rights reserved.</li>
+						</ul>
+					</div>
+				
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+	</body>
+</html>

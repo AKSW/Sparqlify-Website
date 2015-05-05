@@ -1,0 +1,9 @@
+<article>
+			<!--			
+			<img src="images/pic01.jpg" alt="" />
+			-->
+			<header>
+				<h3>Rewriting engine</h3>
+			</header>
+			<p>A powerful rewriting engine that analyzes filter expressions in order to eleminate self joins and joins with unsatisfiable conditions.</p>							
+		</article>

@@ -1,0 +1,9 @@
+<article>
+			<!--			
+			<img src="images/pic01.jpg" alt="" />
+			-->
+			<header>
+				<h3>PostgreSQL/Postgis/H2 support</h3>
+			</header>
+			<p>Tested with PostgreSQL/Postgis and H2. Support for further databases is planned.</p>							
+		</article>

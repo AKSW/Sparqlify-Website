@@ -1,0 +1,2 @@
+### Screenshots
+SPARQLify in action:
