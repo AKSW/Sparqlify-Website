@@ -1,16 +1,15 @@
-## Helios 1.0 by HTML5 UP, modified for Harp
-harp.io | @HarpPlatform
+## SPARQLify website
 
-This template has been modified to work with the [@HarpPlatform](http://twitter.com/HarpPlatform) and [@HarpWebServer](http://twitter.com/HarpWebServer), they contain partials and layouts so the code is easier to manage and dry. You can put this template online in seconds with the [Harp Platform](https://www.harp.io), or run it locally with the [Harp WebServer](http://harpjs.com).
+This repo hosts the sparqlify.org website. It is used for a research project on the distribution of websites.
+It is based on harpJS, and meant to work out-of-the box by cloning this repository, compiling and starting the server. 
+For more information on harp see [harpJS @HarpPlatform](harp.io)
 
-[View a live demo](http://helios.harp.io) 
+The design is based on the [Helios template](http://helios.harp.io), created by AJ at HTML5 UP
 
-This beautiful template is created by AJ at HTML5 UP, license and attribution is below.
 
-### Original Readme and License
+### Original Readme and License of the Helios template:
 html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
 
 This is Helios, a brand new site template for HTML5 UP. It's clean, modern, and designed
 to take advantage of larger (well, wider) displays while still being capable of gracefully
