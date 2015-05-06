@@ -2,7 +2,7 @@
 
 This repo hosts the sparqlify.org website. It is used for a research project on the distribution of websites.
 It is based on harpJS, and meant to work out-of-the box by cloning this repository, compiling and starting the server. 
-For more information on harp see [harpJS @HarpPlatform](harp.io)
+For more information on harp see [harpJS @HarpPlatform](https://www.harp.io/)
 
 The design is based on the [Helios template](http://helios.harp.io), created by AJ at HTML5 UP
 
