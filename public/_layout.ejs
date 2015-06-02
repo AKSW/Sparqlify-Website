@@ -13,10 +13,11 @@
 	  
 		<!-- Header -->
 		<%- partial("_shared/header") %>
-		<div class="container">
+		
 		<% if(current.source == 'index'){ %>
 			<%- yield %>
 		<% } else{ %>
+		<div class="container">
 			<div id="content">
 				<%- yield %>
 			</div>
