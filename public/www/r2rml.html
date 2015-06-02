@@ -1,34 +1,15 @@
 <!DOCTYPE HTML>
-<!--
-	Helios 1.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>SPARQLify</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/style-noscript.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		 <link rel="stylesheet" href="www/bower_components/bootstrap/dist/css/bootstrap.css">
 	</head>
 
 		
 	<body class="r2rml" >
-
+		 <script src="www/bower_components/jquery/dist/jquery.js"></script>
+ 		 <script src="www/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<!-- Header -->
 		
 <div id="header">
@@ -37,77 +18,82 @@
 		
 
 	<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><span>About</span>
-					<ul>
-						<li><a href="/smlLanguage">SML Mapping Language</a>
-							<ul>
-								<li><a href="/r2rml">R2RML conversion</a></li>
-								<li><a href="/userStudyResults">User Study Results</a></li>
-							</ul>
-						</li>
-						<li><a href="/tools">Tools suite</a>
-							<ul>
-								<li><a href="/sparqlify">Sparqlify</a></li>
-								<li><a href="/sparqlify-csv">Sparqlify CSV</a></li>
-								<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
-							</ul>
-						</li>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">sparqlify</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/r2rml">R2RML conversion</a></li>
+						<li><a href="/userStudyResults">User Study Results</a></li>
+						<li><a href="/sparqlify">Sparqlify Tool</a></li>
+						<li><a href="/sparqlify-csv">Sparqlify CSV Tool</a></li>
+						<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
 						<li><a href="/screenshots">Screenshots</a></li>
 						<li><a href="/cmdTooling">Command Line Tooling</a></li>
 					</ul>
-				</li>
-				<li><span>Docs</span>
-					<ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Docs <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
 						<li><a href="/content/manual.pdf">Manual</a></li>
-						<li><span>Getting Started</span>
-							<ul>
-								<li><a href="/packages">Packages</a></li>
-								<li><a href="/building">Building</a></li>
-							</ul>
-						</li>
+						<li><a href="/packages">Packages</a></li>
+						<li><a href="/building">Building</a></li>
 						<li><a href="http://stack.linkeddata.org/download-and-install/">Download</a></li>
-						<li><span>Examples</span>
-							<ul>
-								<li><a href="/example1">Example 1</a></li>
-								<li><a href="/example2">Example 2</a></li>
-							</ul>
-						</li>
+						<li><a href="/examples">Examples</a></li>
 					</ul>
-				</li>
-				<li><span>Development</span>
-					<ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Development <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
 						<li><a href="/architecture">Architecture</a></li>
 						<li><a href="/changeLog">Change log</a></li>	
 						<li><a href="/roadMap">Roadmap</a></li>
 						<li><a href="/demoArea">Demo Area</a></li>
 					</ul>
-				</li>
-				<li><span>Community</span>
-					<ul>
-						<li><a href="http://github.com/sparqlify">Github</a></li>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Community <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="http://github.com/aksw/sparqlify">Github</a></li>
 						<li><a href="/contact">Contact</a></li>
 						<li><a href="/publications">Publications</a></li>
 						<li><a href="/relatedWork">Related work</a></li>
 					</ul>
-				</li>
-			</ul>
-		</nav>
+		</li>
+		<li><a href="/impressum">Impressum</a></li>
+
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 </div>
 
 
 		
-			<div class="wrapper style1 background">
-				<div class="container">
-					<div class="row">
-						<div class="8u skel-cell-mainContent" id="content">
-							<h3>R2RML</h3><p>This page will describe the R2RML conversion</p>
-						</div>
-						<div class="4u" id="sidebar">
-							<hr class="first" >
-	<section>
+			<div id="content">
+				<h3>R2RML</h3><p>This page will describe the R2RML conversion</p>
+			</div>
+			<div id="sidebar">
+				<hr class="first" >
+	<!--
+<section>
 	<!-- Included from twitter.com -->	
 	<a class="twitter-timeline" href="https://twitter.com/SPARQLify" data-widget-id="592568552844107776">Latest Tweets:</a> 
 	<script>
@@ -118,30 +104,15 @@
 	</footer>
 </section>
 
-
+-->
 </hr>
 <hr class="second" >
-	<section>
-	<header>
-		Search SPARQLify.org
-	</header>
-	<div class="row half no-collapse">
-		<div class="4u">
-			<input type=text />
-	<footer>
-		<a href="/search" class="button">Search</a>
-	</footer>
-</section>
-
-
+	
 </hr>
 <hr class="third" >
 	
 </hr>
-
-						</div>
-					</div>
-				</div>
+ 
 			</div>
 		
 
@@ -261,13 +232,13 @@
 			<div class="12u">
 				
 -->				<!-- Contact -->
-					<section class="contact">
+	<!--				<section class="contact">
 						<header>
 							<h3>Contact us</h3>
 						</header>
 						<ul class="icons">
 							<li><a href="https://twitter.com/sparqlify" class="icon icon-twitter"><span>Twitter</span></a></li>
-<!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+--><!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
 							<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
 							<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
 							<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
@@ -276,11 +247,11 @@
 					</section>
 <br>
 				<!-- Copyright -->
-					<div class="copyright">
+<!--					<div class="copyright">
 						<ul class="menu">
 							<li>&copy; Sparqlify 2015. All rights reserved.</li>
 						</ul>
-					</div>
+					</div>-->
 				
 			</div>
 		
