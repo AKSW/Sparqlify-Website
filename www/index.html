@@ -1,256 +1,234 @@
 <!DOCTYPE HTML>
-<!--
-	Helios 1.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
-		<title>Helios by HTML5 UP</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.dropotron.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel-noscript.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-desktop.css" />
-			<link rel="stylesheet" href="css/style-noscript.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<title>SPARQLify</title>
+		 <link rel="stylesheet" href="www/bower_components/bootstrap/dist/css/bootstrap.css">
 	</head>
 
 		
-	<body class="homepage">
-
+	<body class="homepage" >
+		 <script src="www/bower_components/jquery/dist/jquery.js"></script>
+ 		 <script src="www/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	  
 		<!-- Header -->
-		<div id="header">
+		
+<div id="header">
 			
 	<!-- Inner -->
 		
 		<div class="inner">
-			<header>
-				<h1><a href="/" id="logo">Helios</a></h1>
-				<hr />
-				<span class="byline">Another fine freebie by HTML5 UP</span>
-			</header>
- 			<footer>
-				<a href="#banner" class="button circled scrolly">Start</a>
-			</footer>
+			
 		</div> 
 		
 
 	<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li>
-					<span>Dropdown</span>
-					<ul>
-						<li><a href="#">Lorem ipsum dolor</a></li>
-						<li><a href="#">Magna phasellus</a></li>
-						<li><a href="#">Etiam dolore nisl</a></li>
-						<li>
-							<span>And a submenu &hellip;</span>
-							<ul>
-								<li><a href="#">Lorem ipsum dolor</a></li>
-								<li><a href="#">Phasellus consequat</a></li>
-								<li><a href="#">Magna phasellus</a></li>
-								<li><a href="#">Etiam dolore nisl</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Veroeros feugiat</a></li>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">sparqlify</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/r2rml">R2RML conversion</a></li>
+						<li><a href="/userStudyResults">User Study Results</a></li>
+						<li><a href="/sparqlify">Sparqlify Tool</a></li>
+						<li><a href="/sparqlify-csv">Sparqlify CSV Tool</a></li>
+						<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
+						<li><a href="/screenshots">Screenshots</a></li>
+						<li><a href="/cmdTooling">Command Line Tooling</a></li>
 					</ul>
-				</li>
-				<li><a href="/left-sidebar">Left Sidebar</a></li>
-				<li><a href="/right-sidebar">Right Sidebar</a></li>
-				<li><a href="/no-sidebar">No Sidebar</a></li>
-			</ul>
-		</nav>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Docs <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/content/manual.pdf">Manual</a></li>
+						<li><a href="/packages">Packages</a></li>
+						<li><a href="/building">Building</a></li>
+						<li><a href="http://stack.linkeddata.org/download-and-install/">Download</a></li>
+						<li><a href="/examples">Examples</a></li>
+					</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Development <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/architecture">Architecture</a></li>
+						<li><a href="/changeLog">Change log</a></li>	
+						<li><a href="/roadMap">Roadmap</a></li>
+						<li><a href="/demoArea">Demo Area</a></li>
+					</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Community <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="http://github.com/aksw/sparqlify">Github</a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li><a href="/publications">Publications</a></li>
+						<li><a href="/relatedWork">Related work</a></li>
+					</ul>
+		</li>
+		<li><a href="/impressum">Impressum</a></li>
+
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 </div>
+
 		
-		<!-- Banner -->
-<div id="banner">
-	<h2>Hi. You're looking at <strong>Helios</strong>.</h2>
-	<span class="byline">
-		A (free) responsive site template by <a href="http://html5up.net/">HTML5 UP</a>.
-		Built on <a href="http://skeljs.org">skelJS</a> and released under the <a href="http://html5up.net/license/">CCA</a> license.
-	</span>
+		
+			<!-- Banner -->
+<div id="page-header">
+
+
 </div>
+<div class="container">
+	<img src="content/banner_sml.png" style="top: 0px; width: 100%"> <br>
+	<span class="byline">
+		<b>SPARQLify</b> is a scalable SPARQL-SQL rewriter whose development began in April 2011 in the course of the <a href="http://linkedgeodata.org/About">LinkedGeoData project</a>.
+	</span>
 
 <!-- Carousel -->
-<div class="carousel">
-	<div class="reel">
+
+<h2>Features</h2>
+		<article>
+			<h3><a href="/smlLanguage">SML</a> support</h3><p>Support of the &#39;Sparqlification Mapping Language&#39; (SML), an intuitive language for expressing RDB-RDF mappings with only very little syntactic noise.</p>
+
+		</article>
 
 		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Bueller-III-351975087" class="image featured"><img src="images/pic01.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Pulvinar sagittis congue</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
+			<h3><a href="/r2rml">R2RML</a> support</h3><p>R2RML will be supported soon</p>
+
 		</article>
+
+		<article>
+			<h3>Scalability</h3><p>Sparqlify does not evaluate expressions in memory. All SPARQL filters end up in the corresponding SQL statement, giving the underlying RDBMS has maximum control over query planning.</p>
+
+		</article>
+
+		<article>
+			<h3>Rewriting engine</h3><p>A powerful rewriting engine that analyzes filter expressions in order to eleminate self joins and joins with unsatisfiable conditions.</p>
+
+		</article>
+
+		<article>
+			<h3>Spatial support</h3><p>Initial support for spatial datatypes and predicates.</p>
+
+		</article>
+
+		<article>
+			<h3>SPARQL support</h3><p>A subset of the SPARQL 1.0 query language plus sub queries are supported.</p>
+
+		</article>
+
+		<article>
+			<h3>PostgreSQL/Postgis/H2 support</h3><p>Tested with PostgreSQL/Postgis and H2. Support for further databases is planned.</p>
+
+		</article>
+
+		<article>
+			<h3>CSV support</h3><p>CSV support</p>
+
+		</article>
+
+		<article>
+			<h3>CLI Tools</h3><p>SPARQLify delivers sparqlify for RDB in postgres as well as sparqlify-csv for csv/excel files</p>
+
+		</article>
+
+		<article>
+			<h3>Webadmin</h3><p>SPARQLify delivers web admin functionality for servers</p>
+
+		</article>
+
+		<!--
 	
 		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Disco-351602759" class="image featured"><img src="images/pic02.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Fermentum sagittis proin</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/The-Patina-of-Time-and-Tide-352128094" class="image featured"><img src="images/pic03.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Cityparts-XVIII-350427779" class="image featured"><img src="images/pic04.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Ultrices urna sit lobortis</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Vine-Country-381350120" class="image featured"><img src="images/pic05.jpg" alt=""></a>
+			<a href="http://mdomaradzki.deviantart.com/art/Vine-Country-381350120" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
 			<header>
 				<h3><a href="#">Varius magnis sollicitudin</a></h3>
 			</header>
 			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
 		</article>
-
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Bueller-III-351975087" class="image featured"><img src="images/pic01.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Pulvinar sagittis congue</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Disco-351602759" class="image featured"><img src="images/pic02.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Fermentum sagittis proin</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/The-Patina-of-Time-and-Tide-352128094" class="image featured"><img src="images/pic03.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Cityparts-XVIII-350427779" class="image featured"><img src="images/pic04.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Ultrices urna sit lobortis</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-	
-		<article>
-			<a href="http://mdomaradzki.deviantart.com/art/Vine-Country-381350120" class="image featured"><img src="images/pic05.jpg" alt=""></a>
-			<header>
-				<h3><a href="#">Varius magnis sollicitudin</a></h3>
-			</header>
-			<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>							
-		</article>
-
+	-->
 	</div>
-</div>
+
+
 
 <!-- Main -->
+<!--
 <div class="wrapper style2">
-
 	<article id="main" class="container special">
-		<a href="http://mdomaradzki.deviantart.com/art/Planet-Bronte-339258500" class="image featured"><img src="images/pic06.jpg" alt=""></a>
-		<header>
-			<h2><a href="#">Sed massa imperdiet magnis</a></h2>
-			<span class="byline">
-				Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim 
-				pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
-			</span>
-		</header>
-		<p>
-			Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa 
-			posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus 
-			sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam 
-			mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan 
-			lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum 
-			consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue 
-			interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia 
-			natoque aenean scelerisque.
-		</p>
 		<footer>
 			<a href="#" class="button">Continue Reading</a>
 		</footer>
 	</article>
-
 </div>
+-->
 
 <!-- Features -->
+
 <div class="wrapper style1">
-	
 	<section id="features" class="container special">
-		<header>
-			<h2>Morbi ullamcorper et varius leo lacus</h2>
-			<span class="byline">Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</span>
-		</header>
 		<div class="row">
-			<article class="4u special">
-				<a href="http://mdomaradzki.deviantart.com/art/Bueller-VII-351975126" class="image featured"><img src="images/pic07.jpg" alt=""></a>
-				<header>
-					<h3><a href="#">Gravida aliquam penatibus</a></h3>
-				</header>
-				<p>
-					Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-					porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-				</p>
-			</article>
-			<article class="4u special">
-				<a href="http://mdomaradzki.deviantart.com/art/Home-Bound-Train-II-338912191" class="image featured"><img src="images/pic08.jpg" alt=""></a>
-				<header>
-					<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-				</header>
-				<p>
-					Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-					porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-				</p>
-			</article>
-			<article class="4u special">
-				<a href="http://mdomaradzki.deviantart.com/art/Up-is-Down-325005102" class="image featured"><img src="images/pic09.jpg" alt=""></a>
-				<header>
-					<h3><a href="#">Magna laoreet et aliquam</a></h3>
-				</header>
-				<p>
-					Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-					porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-				</p>
-			</article>
+			<div class="8u skel-cell-mainContent" id="content">
+			<header>
+				<p>SPARQLify supports the following SPARQL language features:
+			</p></header>
+				<ul>
+					<li>Join, LeftJoin (i.e. Optional), Union, Sub queries</li>
+					<li>Filter predicates: comparison: (&lt;=, &lt;, =, &gt;, &gt;=) logical: (!, &&; ||) arithmetic: (+, -) spatial: st_intersects, geomFromText; other: regex, lang, langMatches</li>
+					<li>Aggregate functions: Count(*)</li>
+					<li>Order By is pushed into the SQL</li>
+				</ul>
+			</div>
+			<div class="4u" id="sidebar">
+				 <link rel="stylesheet" href="css/bootstrap.css">
+
+<script src="../js/angular.js"></script>
+<script src="../js/dlBoxController.js"></script>
+<!--
+<html ng-app="dlBox">
+	<body ng-controller="dlBoxController" ng-init="init()">
+		<tabset justified="true">
+			<tab heading="dl1">
+			{{foo}}
+			</tab>
+			<tab heading="dl2">
+			blubb
+			</tab>
+		</tabset>
+	</body>
+</html>
+-->
+			</div>
 		</div>
 	</section>
-
-</div>	
-
+</div>
+		
+		</div>
 		<!-- Footer -->
 		<div id="footer">
 	<div class="container">
 		<div class="row">
 			
 			<!-- Tweets -->
-				<section class="4u">
+<!--				<section class="4u">
 					<header>
 						<h2 class="icon icon-twitter circled"><span>Tweets</span></h2>
 					</header>
@@ -281,9 +259,9 @@
 						</li>
 					</ul>
 				</section>
-
+-->
 			<!-- Posts -->
-				<section class="4u">
+<!--				<section class="4u">
 					<header>
 						<h2 class="icon icon-file circled"><span>Posts</span></h2>
 					</header>
@@ -322,9 +300,9 @@
 						</li>
 					</ul>
 				</section>
-
+-->
 			<!-- Photos -->
-				<section class="4u">
+<!--				<section class="4u">
 					<header>
 						<h2 class="icon icon-camera circled"><span>Photos</span></h2>
 					</header>
@@ -359,31 +337,27 @@
 		<div class="row">
 			<div class="12u">
 				
-				<!-- Contact -->
-					<section class="contact">
+-->				<!-- Contact -->
+	<!--				<section class="contact">
 						<header>
-							<h3>Nisl turpis nascetur interdum?</h3>
+							<h3>Contact us</h3>
 						</header>
-						<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
 						<ul class="icons">
-							<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+							<li><a href="https://twitter.com/sparqlify" class="icon icon-twitter"><span>Twitter</span></a></li>
+--><!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
 							<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
 							<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
 							<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
-							<li><a href="#" class="icon icon-linkedin"><span>Linkedin</span></a></li>
+							<li><a href="#" class="icon icon-linkedin"><span>Linkedin</span></a></li> -->
 						</ul>
 					</section>
-				
+<br>
 				<!-- Copyright -->
-					<div class="copyright">
+<!--					<div class="copyright">
 						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li>
-							<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
-							<li>Demo Images: <a href="http://mdomaradzki.deviantart.com/">Michael Domaradzki</a></li>
-							<li>Modified to work with the <a href="https://www.harp.io">Harp Platform</a></li>
+							<li>&copy; Sparqlify 2015. All rights reserved.</li>
 						</ul>
-					</div>
+					</div>-->
 				
 			</div>
 		
@@ -391,5 +365,6 @@
 	</div>
 </div>
 
+	  </div>
 	</body>
 </html>

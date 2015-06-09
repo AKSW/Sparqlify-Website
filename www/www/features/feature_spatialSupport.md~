@@ -1,0 +1,12 @@
+
+
+	<article>
+			<!--			
+			<img src="images/pic01.jpg" alt="" />
+			-->
+			<header>
+				<h3>Spatial support</h3>
+			</header>
+			<p>Initial support for spatial datatypes and predicates.</p>							
+		</article>
+

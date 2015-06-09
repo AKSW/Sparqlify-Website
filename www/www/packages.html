@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>SPARQLify</title>
+		 <link rel="stylesheet" href="www/bower_components/bootstrap/dist/css/bootstrap.css">
+	</head>
+
+		
+	<body class="packages" >
+		 <script src="www/bower_components/jquery/dist/jquery.js"></script>
+ 		 <script src="www/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<!-- Header -->
+		
+<div id="header">
+			
+	<!-- Inner -->
+		
+
+	<!-- Nav -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">sparqlify</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/r2rml">R2RML conversion</a></li>
+						<li><a href="/userStudyResults">User Study Results</a></li>
+						<li><a href="/sparqlify">Sparqlify Tool</a></li>
+						<li><a href="/sparqlify-csv">Sparqlify CSV Tool</a></li>
+						<li><a href="/sparqlify-platform">Sparqlify Platform</a></li>
+						<li><a href="/screenshots">Screenshots</a></li>
+						<li><a href="/cmdTooling">Command Line Tooling</a></li>
+					</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Docs <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/content/manual.pdf">Manual</a></li>
+						<li><a href="/packages">Packages</a></li>
+						<li><a href="/building">Building</a></li>
+						<li><a href="http://stack.linkeddata.org/download-and-install/">Download</a></li>
+						<li><a href="/examples">Examples</a></li>
+					</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Development <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/architecture">Architecture</a></li>
+						<li><a href="/changeLog">Change log</a></li>	
+						<li><a href="/roadMap">Roadmap</a></li>
+						<li><a href="/demoArea">Demo Area</a></li>
+					</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Community <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="http://github.com/aksw/sparqlify">Github</a></li>
+						<li><a href="/contact">Contact</a></li>
+						<li><a href="/publications">Publications</a></li>
+						<li><a href="/relatedWork">Related work</a></li>
+					</ul>
+		</li>
+		<li><a href="/impressum">Impressum</a></li>
+
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</div>
+
+
+		
+			<div id="content">
+				<h2>Debian packages</h2><p>Sparqlify Debian packages can be obtained by following means:</p>
+<ul>
+<li>Via the <a href="http://stack.linkeddata.org">Linked Data Stack</a> (recommended)</li>
+<li>Download from the <a href="http://sparqlify.org/downloads/releases">Sparqlify website&#39;s download section</a>.</li>
+<li>Directly from source using maven (read down the README)</li>
+</ul>
+<h3>Public repositories</h3><p>After setting up any of the repositories below, you can install sparqlify with apt using</p>
+<ul>
+<li>apt: `sudo apt-get install sparqlify-cli</li>
+</ul>
+<h4>Linked Data Stack (this is what you want)</h4><p>Sparqlify is distributed at the <a href="http://stack.linkeddata.org">Linked Data Stack</a>, which offers many great tools done by various contributors of the Semantic Web community.</p>
+<ul>
+<li>The repository is available in the flavors <code>nightly</code>, <code>testing</code> and <code>stable</code> <a href="http://stack.linkeddata.org/download/repo.php">here</a>.</li>
+</ul>
+<pre><code class="language-bash"># !!! Replace stable with nightly or testing as needed !!!
+
+# Download the repository package
+wget http://stack.linkeddata.org/ldstable-repository.deb
+
+# Install the repository package
+sudo dpkg -i ldstable-repository.deb
+
+# Update the repository database
+sudo apt-get update
+</code></pre>
+<h4>Bleeding Edge (WARNING: Do not use this for production!!!)</h4><p>For the latest development version (built on every commit) perform the following steps</p>
+<p>Create the file</p>
+<pre><code>/etc/apt/sources.list.d/cstadler.aksw.org.list
+</code></pre><p>and add the content</p>
+<pre><code>deb     http://cstadler.aksw.org/repos/apt precise main contrib non-free
+</code></pre><p>Import the public key with</p>
+<pre><code>wget -O - http://cstadler.aksw.org/repos/apt/conf/packages.precise.gpg.key | apt-key add -
+</code></pre><p>Note that this also works with distros other than &quot;precise&quot; (ubuntu 12.04) such as ubuntu 14.04.</p>
+			</div>
+			<div id="sidebar">
+				<hr class="first" >
+	<!--
+<section>
+	<!-- Included from twitter.com -->	
+	<a class="twitter-timeline" href="https://twitter.com/SPARQLify" data-widget-id="592568552844107776">Latest Tweets:</a> 
+	<script>
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script> 
+	<footer>
+		<a href="https://twitter.com/sparqlify" class="icon icon-twitter">Follow us on Twitter</a>
+	</footer>
+</section>
+
+-->
+</hr>
+<hr class="second" >
+	
+</hr>
+<hr class="third" >
+	
+</hr>
+ 
+			</div>
+		
+
+		<!-- Footer -->
+		<div id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<!-- Tweets -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-twitter circled"><span>Tweets</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="tweet">
+								Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
+								<span class="timestamp">5 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Hendrerit rutrum quisque.
+								<span class="timestamp">30 minutes ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="tweet">
+								Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
+								<span class="timestamp">5 hours ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Posts -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-file circled"><span>Posts</span></h2>
+					</header>
+					<ul class="divided">
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Nisl fermentum integer</a></h3>
+								</header>
+								<span class="timestamp">3 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Phasellus portitor lorem</a></h3>
+								</header>
+								<span class="timestamp">6 hours ago</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Magna tempus consequat</a></h3>
+								</header>
+								<span class="timestamp">Yesterday</span>
+							</article>
+						</li>
+						<li>
+							<article class="post stub">
+								<header>
+									<h3><a href="#">Feugiat lorem ipsum</a></h3>
+								</header>
+								<span class="timestamp">2 days ago</span>
+							</article>
+						</li>
+					</ul>
+				</section>
+-->
+			<!-- Photos -->
+<!--				<section class="4u">
+					<header>
+						<h2 class="icon icon-camera circled"><span>Photos</span></h2>
+					</header>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Air-Lounge-385212062" class="image full"><img src="images/pic10.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-City-Streets-II-382623606" class="image full"><img src="images/pic11.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Trainride-Visions-383309985" class="image full"><img src="images/pic12.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Paris-Metro-382623851" class="image full"><img src="images/pic13.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="row quarter no-collapse">
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Cliffs-of-Coogee-II-366961860" class="image full"><img src="images/pic14.jpg" alt="" /></a>
+						</div>
+						<div class="6u">
+							<a href="http://mdomaradzki.deviantart.com/art/Stormy-Coast-VII-366561367" class="image full"><img src="images/pic15.jpg" alt="" /></a>
+						</div>
+					</div>
+				</section>
+
+		</div>
+		<hr />
+		<div class="row">
+			<div class="12u">
+				
+-->				<!-- Contact -->
+	<!--				<section class="contact">
+						<header>
+							<h3>Contact us</h3>
+						</header>
+						<ul class="icons">
+							<li><a href="https://twitter.com/sparqlify" class="icon icon-twitter"><span>Twitter</span></a></li>
+--><!--							<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+							<li><a href="#" class="icon icon-google-plus"><span>Google+</span></a></li>
+							<li><a href="#" class="icon icon-pinterest"><span>Pinterest</span></a></li>
+							<li><a href="#" class="icon icon-dribbble"><span>Dribbble</span></a></li>
+							<li><a href="#" class="icon icon-linkedin"><span>Linkedin</span></a></li> -->
+						</ul>
+					</section>
+<br>
+				<!-- Copyright -->
+<!--					<div class="copyright">
+						<ul class="menu">
+							<li>&copy; Sparqlify 2015. All rights reserved.</li>
+						</ul>
+					</div>-->
+				
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+	</body>
+</html>

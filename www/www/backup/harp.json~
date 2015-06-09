@@ -1,0 +1,8 @@
+{
+	"domains" : ['http://sparqlify.org'],
+	"globals" : {
+		"title" : "SPARQLify",
+		"name" : "Claus Stadler",
+		"uri" : "http://sparqlify.org"
+	}
+}
