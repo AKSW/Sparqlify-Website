@@ -1,3 +1,8 @@
+<style>
+#equalheight {
+    overflow: hidden; 
+}
+</style>
 
 <!-- Banner -->
 <div id="page-header">
@@ -12,47 +17,53 @@
 
 <!-- Carousel -->
 
+
+
 <h2>Features</h2>
-		<article>
+	<div class="row" style="display: clearfix;">
+	 <!-- <div class="container clearfix"> -->
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight">
 			<%- partial("features/feature_sml") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight"> 
 			<%- partial("features/feature_r2rmlSupport") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight">
 			<%- partial("features/feature_scalability") %>
 		</article>
-
-		<article>
+	</div>
+	<div class="row" style="display: clearfix;">
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_rewriting") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_spatialSupport") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_sparqlSupport") %>
 		</article>
-
-		<article>
+	</div>
+	<div class="row" style="display: clearfix;">
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_pphSupport") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_csvSupport") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_cliTools") %>
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<%- partial("features/feature_webAdmin") %>
 		</article>
-
+	</div>
 		<!--
 	
 		<article>

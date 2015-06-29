@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>SPARQLify</title>
+		<title>sparqlify</title>
 		 <link rel="stylesheet" href="www/bower_components/bootstrap/dist/css/bootstrap.css">
 	</head>
 
@@ -90,9 +90,16 @@
 
 </div>
 
+
 		
 		
-			<!-- Banner -->
+			<style>
+#equalheight {
+    overflow: hidden; 
+}
+</style>
+
+<!-- Banner -->
 <div id="page-header">
 
 
@@ -105,57 +112,63 @@
 
 <!-- Carousel -->
 
+
+
 <h2>Features</h2>
-		<article>
+	<div class="row" style="display: clearfix">
+	 <!-- <div class="container clearfix"> -->
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight">
 			<h3><a href="/smlLanguage">SML</a> support</h3><p>Support of the &#39;Sparqlification Mapping Language&#39; (SML), an intuitive language for expressing RDB-RDF mappings with only very little syntactic noise.</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight"> 
 			<h3><a href="/r2rml">R2RML</a> support</h3><p>R2RML will be supported soon</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell classToFixHeight">
 			<h3>Scalability</h3><p>Sparqlify does not evaluate expressions in memory. All SPARQL filters end up in the corresponding SQL statement, giving the underlying RDBMS has maximum control over query planning.</p>
 
 		</article>
-
-		<article>
+	</div>
+	<div class="row" style="display: clearfix">
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<h3>Rewriting engine</h3><p>A powerful rewriting engine that analyzes filter expressions in order to eleminate self joins and joins with unsatisfiable conditions.</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<h3>Spatial support</h3><p>Initial support for spatial datatypes and predicates.</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-4 thumbnail tile tile-medium tile-teal cell">
 			<h3>SPARQL support</h3><p>A subset of the SPARQL 1.0 query language plus sub queries are supported.</p>
 
 		</article>
-
-		<article>
+	</div>
+	<div class="row" style="display: clearfix">
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<h3>PostgreSQL/Postgis/H2 support</h3><p>Tested with PostgreSQL/Postgis and H2. Support for further databases is planned.</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<h3>CSV support</h3><p>CSV support</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<h3>CLI Tools</h3><p>SPARQLify delivers sparqlify for RDB in postgres as well as sparqlify-csv for csv/excel files</p>
 
 		</article>
 
-		<article>
+		<article class="col-sm-6 col-md-3 thumbnail tile tile-medium tile-teal cell">
 			<h3>Webadmin</h3><p>SPARQLify delivers web admin functionality for servers</p>
 
 		</article>
-
+	</div>
 		<!--
 	
 		<article>
@@ -198,11 +211,7 @@
 				</ul>
 			</div>
 			<div class="4u" id="sidebar">
-				 <link rel="stylesheet" href="css/bootstrap.css">
-
-<script src="../js/angular.js"></script>
-<script src="../js/dlBoxController.js"></script>
-<!--
+				<script src="../js/dlBoxController.js"></script>
 <html ng-app="dlBox">
 	<body ng-controller="dlBoxController" ng-init="init()">
 		<tabset justified="true">
@@ -215,7 +224,7 @@
 		</tabset>
 	</body>
 </html>
--->
+
 			</div>
 		</div>
 	</section>
