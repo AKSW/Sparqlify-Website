@@ -1,0 +1,26 @@
+{
+  "name": "Sparqlify-Website",
+  "version": "0.0.0",
+  "description": "Website for the sparqlify project",
+  "main": "public/_layout.ejs",
+  "dependencies": {
+    "gulp": "~3.9.0",
+    "gulp-git": "~1.2.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-bower-install": "~1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AKSW/Sparqlify-Website.git"
+  },
+  "author": "Claus Stadler, Simon Johanning",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/AKSW/Sparqlify-Website/issues"
+  }
+}
