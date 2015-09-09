@@ -1,7 +1,6 @@
 gulp update
 rm -r public/www/bower_components
 harp compile
-cd public
-bower install
-cd ../
+gulp bower
+gulp index
 harp server --port 9000
