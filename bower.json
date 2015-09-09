@@ -1,0 +1,34 @@
+{
+  "name": "Sparqlify-website",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AKSW/Sparqlify-Website",
+  "authors": [
+    "Simonjohanning <Simonjohanning@gmail.com>"
+  ],
+  "description": "git and harp-based website for the sparqlify project",
+  "main": "_layout.ejs",
+  "keywords": [
+    "harp",
+    "sparqlify"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "/www/bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jassa-ui-angular-edit": "0.9.0-SNAPSHOT"
+  },
+  "resolutions": {
+    "bootstrap": "~3.3.4",
+    "angular": "1.3.5-build.3630+sha.30694c8"
+  },
+  "moduleType": [
+    "node"
+  ]
+}
